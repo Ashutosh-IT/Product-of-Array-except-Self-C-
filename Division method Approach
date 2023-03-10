@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[5]= {1,-7,3,0,5};
+    int n=5;
+    int count =0; //to store the count of zero in array
+    int zero_product=1; //to store the product if there is only 1 zero in the array
+    //First of all we have to count the number of 0 in array, Beacuse it will affect our result.
+    for(int i=0; i<n; i++){
+        if(arr[i]==0){
+            count++;
+            continue;
+        }
+        //counting no. of zeroes and zero_product in one loop
+        zero_product*=arr[i];
+    }
+    int product=1; //to the real product of all elements of array.
+    for(int i=0; i<n;i++){
+        product*=arr[i];
+    }
+    if(count==1){
+        //here no.of zeroes in array are 1 so all the other elements of array will be replaced by 0 and 0 is replaced by zero_product.
+        for(int i=0; i<n ; i++){
+            if(arr[i]==0){
+                arr[i]=zero_product;
+            }
+            else 
+                arr[i]=0;
+        }
+    }
+    else {
+        //here no.of zeroes are may be none or more than 1. So we will use simple division method here.
+        for(int i=0; i<n; i++){
+            if(arr[i]==0){
+                //we did this because of c++ 0 division rule that whenever anynumber (i.e 0 included) is divided is 0 then it give undefined answer. So we have to use continue statement for this error handling.
+                continue;
+            }
+            // for all other values except 0 we will use simple divison method
+            arr[i]= product/arr[i];
+        }
+    }
+    //now printing the answer
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+}

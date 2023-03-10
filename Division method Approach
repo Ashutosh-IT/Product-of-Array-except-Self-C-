@@ -32,7 +32,7 @@ int main(){
         //here no.of zeroes are may be none or more than 1. So we will use simple division method here.
         for(int i=0; i<n; i++){
             if(arr[i]==0){
-                //we did this because of c++ 0 division rule that whenever anynumber (i.e 0 included) is divided is 0 then it give undefined answer. So we have to use continue statement for this error handling.
+                //we did this because of c++ 0 division rule that whenever anynumber (i.e 0 included) is divided by 0 then it give undefined answer. So we have to use continue statement for this error handling.
                 continue;
             }
             // for all other values except 0 we will use simple divison method

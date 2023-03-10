@@ -20,4 +20,4 @@ int main(){
 }
 
 Time Complexity = O(n²)
-QSpace Complexity = O(n)
+Space Complexity = O(n)
